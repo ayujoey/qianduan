@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .tooltip::before,
+    .tooltip::after {
+        content: '';
+        position: absolute;
+        background: #2f2f2f;
+        z-index: 1;
+        transition: all 0.3s;
+    }
+
+    .tooltip::before {
+        width: calc(100% - 3rem);
+        height: calc(101% + 1rem);
+        top: -0.5rem;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .tooltip::after {
+        height: calc(100% - 3rem);
+        width: calc(101% + 1rem);
+        left: -0.5rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+
+    .tooltip:hover {
+        color: pink;
+    }
+
+    .tooltip {
+        font-family: 'Lato', sans-serif;
+        letter-spacing: .02rem;
+        cursor: pointer;
+        background: transparent;
+        border: 0.5rem solid currentColor;
+        padding: 1.5rem 2rem;
+        font-size: 2.2rem;
+        color: #06c17f;
+        position: relative;
+        transition: color 0.3s;
+        text-align: center;
+        margin: 5rem 12rem;
+    }
+
+    .tooltip:hover::after {
+        height: 0;
+    }
+
+    .tooltip:hover::before {
+        width: 0;
+    }
+
+    .bg-f2 {
+        background: #2f2f2f;
+    }
+</style>
+
+<body style="text-align:center;">
+    <br><br><br><br><br><br>
+    <div class="tooltip">这将是最最伟大的发明
+        <span class="tooltiptext">这是魔法的发现</span>
+    </div>
+
+</body>
+
+</html>

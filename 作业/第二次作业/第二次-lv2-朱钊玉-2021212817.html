@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .black-mask {
+            position: relative;
+            height: 400px;
+            width: 310px;
+            cursor: pointer;
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            background-color: black;
+            display: flex;
+            margin: auto;
+            text-align: center;
+        }
+
+        .black-mask:hover {
+            transition-duration: 1s;
+            scale: 1.02;
+        }
+
+        .black-mask:hover:before {
+            object-fit: cover;
+        }
+
+        .black-mask:hover:after {
+            height: 100%;
+            opacity: 1;
+            transition-duration: 1s;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 30px 15px;
+        }
+
+
+
+        .black-mask::after {
+            position: absolute;
+            display: block;
+            align-items: center;
+            content: "看来无法回头了哦";
+            width: 250px;
+            height: 300px;
+            bottom: 0;
+            right: 0;
+            z-index: 32;
+            background: rgba(240, 12, 12, 0.877);
+            opacity: 1;
+            color: #fff;
+            opacity: 0;
+            padding: 0 30px 0;
+            margin-bottom: 60px;
+        }
+
+        .btn,
+        .btn.active,
+        .btn.hover,
+        .btn:active,
+        .btn:focus,
+        .btn:hover::before {
+            /* display: flex; */
+
+
+            margin: auto;
+
+            height: 40px;
+            width: 80%;
+            color: #222;
+            background-image: linear-gradient(135deg, #DAD 0, red 100%);
+            border-width: 0;
+            box-shadow: 0 2px 1px rgba(191, 105, 0, .15);
+            background-size: 100%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+
+
+        .btn:hover {
+            background: white;
+            content: 欢迎来到新世界;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="black-mask">
+
+        <span class="nc">
+            <h1 style="color: red;">CARD 1</h1>
+            <p style="color: white;">你不应该在这儿，回去!</p>
+            <p style="color: white;">当你在凝视深渊的时候，深渊也在凝视你</p>
+            <p style="color: white;">离开 离开 离开 离开 离开 离开 离开</p>
+            <p style="color: white;">离开 离开 离开 离开 离开 离开 离开</p>
+            <p style="color: white;">离开 离开 离开 离开 离开</p>
+            <p style="color: white;">快逃！！！</p>
+            <p style="color: white;"><strong>快逃！！！</strong></p>
+            <button type="button" class="btn">踏入此地</button>
+        </span>
+    </div>
+
+
+</body>
+
+</html>

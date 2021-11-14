@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            display: flex;
+            height: 300px;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+
+        }
+
+
+
+        .fir {
+            display: block;
+
+
+            margin: auto;
+            width: 105.2px;
+            border-style: solid;
+            border-color: red;
+            height: 120px;
+
+            order: 2;
+            padding: 20px;
+
+
+        }
+
+        .sec {
+            display: block;
+
+            width: 105.2px;
+
+            border-style: solid;
+            border-color: red;
+            height: 100px;
+
+            order: 3;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .thi {
+
+
+
+            width: 105.2px;
+            border-style: solid;
+            border-color: red;
+            height: 40px;
+
+            order: 4;
+            padding: 20px;
+            margin: auto;
+            align-items: right;
+            float: left;
+        }
+
+        .for {
+            display: block;
+
+
+
+            width: 105.2px;
+            border-style: solid;
+            border-color: blue;
+            height: 200px;
+
+            order: 1;
+            padding: 20px;
+
+            margin-right: auto;
+            margin-left: 0;
+
+
+        }
+
+        .span:last-child {
+            margin-left: 0;
+        }
+
+
+        @media screen and (min-width: 640px) {
+            .fir {
+                margin: auto;
+                margin-left: 0;
+
+
+                order: 1;
+            }
+
+            .sec {
+                order: 2;
+            }
+
+            .thi {
+
+                order: 3;
+            }
+
+            .for {
+                margin: auto;
+                margin-right: 0;
+
+                order: 4;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .thi {
+                margin-left: 0px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- 1 -->
+        <span class="fir">
+            1
+        </span>
+        <!-- 2 -->
+        <span class="sec">
+            2
+        </span>
+        <!-- 3 -->
+        <span class="thi">
+            3
+        </span>
+        <!-- 4 -->
+        <span class="for">
+            4
+        </span>
+    </div>
+</body>
+
+</html>
