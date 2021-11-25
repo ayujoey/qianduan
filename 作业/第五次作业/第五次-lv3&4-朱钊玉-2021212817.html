@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿玉的留言板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ban {
+            background-color: rgba(59, 185, 235, 0.315);
+            height: 400px;
+            align-content: center;
+            margin: auto;
+        }
+
+        .ban ul li {
+            list-style: none;
+            border-bottom: 1px dashed #0000FF;
+            padding: 5px;
+        }
+
+        .ban ul li .del {
+            /* 设置删除按钮样式 */
+            color: red;
+            float: right;
+            text-decoration: none;
+        }
+
+        .red {
+            /* 设置字体颜色按钮    */
+            background: red;
+
+            float: right;
+        }
+
+        .rr {
+            color: red;
+        }
+
+        .yellow {
+            /* 设置字体颜色按钮    */
+            background: yellow;
+
+            float: right;
+        }
+
+        .yy {
+            color: yellow;
+        }
+
+        .green {
+            /* 设置字体颜色按钮    */
+            background: green;
+
+            float: right;
+        }
+
+        .gg {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ban" id="ban">
+
+        <h1 style="color: pink;">留言板</h1>
+
+
+    </div>
+
+    <span>写下你的留言吧:</span>
+    <br />
+    <textarea id="pl" cols="30" rows="10" placeholder="快来留言吧"></textarea>
+    <input type="button" value="评论" id="btn">
+
+    <script>
+        window.onload = function () {
+            let ul = document.createElement('ul');//创建一个ul
+            document.getElementById("ban").appendChild(ul);//获取到板子的标签
+            document.getElementById("btn").onclick = function () {
+                let txt = document.getElementById("pl").value;//用li获取value中的评论
+                let li = document.createElement('li');//创建一个li标签放每一条留言
+                ul.appendChild(li)//把li加到ul下面
+                txt = txt + "<input type='button' value='删除' class='del'>";
+                txt = txt + "<input type='button' value='红色' class='red'>";
+                txt = txt + "<input type='button' value='绿色' class='green'>";
+                txt = txt + "<input type='button' value='黄色' class='yellow'>";
+                li.innerHTML = txt;
+                document.getElementById("pl").value = '';//整一个写完清除功能
+
+                //设置删除功能
+                let dels = document.getElementsByClassName('del');
+                for (let j = 0; j < dels.length; j++) {
+                    dels[j].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+                //设置颜色按钮
+                let red = document.getElementsByClassName('red');
+                for (let i = 0; i < red.length; i++) {
+                    red[i].onclick = function () {
+                        this.parentNode.classList.add("rr");
+                    }
+                }
+
+                let green = document.getElementsByClassName('green');
+                for (let i = 0; i < green.length; i++) {
+                    green[i].onclick = function () {
+                        this.parentNode.classList.add("gg");
+                    }
+                }
+
+                let yellow = document.getElementsByClassName('yellow');
+                for (let i = 0; i < yellow.length; i++) {
+                    yellow[i].onclick = function () {
+                        this.parentNode.classList.add("yy");
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
