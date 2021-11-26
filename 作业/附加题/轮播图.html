@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="chn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 处理一下图片 */
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            position: relative;
+            width: 95%;
+            height: 350px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 20%);
+            background-color: rgba(224, 64, 64, 0.486);
+        }
+
+        .imgs {
+            position: absolute;
+            width: 50%;
+            height: 350px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        /* 图片全部定位到一起 */
+        .imgs li {
+            position: absolute;
+            width: 730px;
+            height: 350px;
+            /* 过渡时间 */
+            transition: 0.5s;
+        }
+
+        .box .left {
+            position: absolute;
+            font-size: 24px;
+            color: white;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background-color: black;
+            border-radius: 50%;
+
+            /* 半透明效果 */
+            opacity: .3;
+            top: 50%;
+            left: 0;
+            /* 设置总在上层 */
+            z-index: 999;
+            cursor: pointer;
+        }
+
+
+        .box .right {
+            position: absolute;
+            font-size: 24px;
+            color: white;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background-color: black;
+            border-radius: 50%;
+            /* 添加半透明 */
+            opacity: .3;
+            top: 50%;
+            right: 0;
+            z-index: 999;
+            /* 设置点到的时候的鼠标样式 */
+            cursor: pointer;
+        }
+
+        /* 有鼠标时会好看些 */
+        .left:hover {
+            /* 把透明度挑高一点，让按钮看起来更亮一些 */
+            opacity: .7;
+        }
+
+        .right:hover {
+            opacity: .7;
+        }
+
+        /* 分别处理一下图片 */
+        /* 第一张图片往左边靠一点点 */
+        /* 重叠的优先级设置为1 */
+        .imgs .one {
+            transform: translateX(-150px) scale(0.9);
+            z-index: 1;
+        }
+
+        /* C位，优先级最高 */
+        .imgs .two {
+            z-index: 2;
+        }
+
+        /* 第三张图片往左边靠一点点 */
+        /* 重叠的优先级设置为1 */
+        .imgs .three {
+            transform: translateX(150px) scale(0.9);
+            z-index: 1;
+        }
+
+        /* 第四张不动，优先级降一下，大小缩一点，藏在C位那张的后面 */
+        .imgs .four {
+            transform: scale(0.5);
+            z-index: 0.5;
+        }
+
+        /* 按到可以快速切图的小圆圈 */
+        /* 放在图片下面 */
+        .ml {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            margin-left: -81px;
+            z-index: 10;
+        }
+
+        .ml li {
+            float: left;
+            /*左浮做横排*/
+            width: 15px;
+            height: 15px;
+            background-color: rgb(230, 230, 230);
+            border-radius: 50%;
+            margin: 0 6px;
+            /* 设置点到的时候的鼠标样式 */
+            cursor: pointer;
+        }
+
+        /* 小圆圈改变后的样式 */
+        .ml .change {
+            background-color: orange;
+        }
+    </style>;
+
+</head>
+
+<body>
+    <!-- 大盒子 -->
+    <div class="box">
+        <!-- 左侧按钮 -->
+        <a href="javascript:;" class="left">&lt</a>
+        <!-- 右侧按钮 -->
+        <a href="javascript:;" class="right">&gt</a>
+        <!-- 轮播图片 -->
+        <ul class="imgs">
+            <li class="one">
+                <img src="http://niceonegame.com/d/file/xysj/2017-12-07/eae23f340716e04dce8cd5796697ac76.jpg"></a>
+            </li>
+            <li class="two">
+                <img
+                    src="https://tse1-mm.cn.bing.net/th/id/R-C.03786a40e930827c1154f3c972cfee25?rik=I0z8KZsQSGfsuA&riu=http%3a%2f%2fi2.hdslb.com%2fbfs%2farchive%2fcd30b673b07c7b9e224ad3dcff35d28f1e421954.jpg&ehk=sB49tFaxoi5sHKEXXboVVFmrfUck0rCxBETh4HYMObI%3d&risl=&pid=ImgRaw&r=0"></a>
+            </li>
+            <li class="three">
+                <img src="https://img.moegirl.org.cn/common/2/25/BERRYMAN-LANGFORD.jpg"></a>
+            </li>
+            <li class="four">
+                <img src="http://niceonegame.com/d/file/xysj/2017-12-07/75790003d0c54998541435184fa93a79.jpg"></a>
+            </li>
+        </ul>
+        <!-- 小圆圈 -->
+        <ul class="ml">
+        </ul>
+    </div>
+    <script src="轮播图.js"></script>
+</body>
+
+</html>
