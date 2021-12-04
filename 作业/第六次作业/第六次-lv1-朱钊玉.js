@@ -46,7 +46,7 @@ let thr = document.getElementsByClassName("thr")
 //     })
 
 
-//step2：async/await
+//step3：async/await
 
 function change(arr, string) {
     return new Promise((resolve, reject) => {
